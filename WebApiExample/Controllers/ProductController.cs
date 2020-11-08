@@ -13,7 +13,8 @@ namespace WebApiExample.Controllers
         private List<Product> products = new List<Product>()
         {
              new Product { id=1,name = "cup", price=22M, qty = 3 },
-             new Product { id=2,name = "paper", price=41.7M, qty = 3 }
+             new Product { id=2,name = "paper", price=41.7M, qty = 2 },
+             new Product { id=3,name = "big", price=49.8M, qty = 1}
         };
 
         public IEnumerable<Product> Get()
@@ -23,7 +24,7 @@ namespace WebApiExample.Controllers
 
         public IHttpActionResult Get(int id)
         {
-            var p =  products.Where(q => q.id == id);
+            var p = products.Where(q => q.id == id);
             if (p == null)
             {
                 return NotFound();
