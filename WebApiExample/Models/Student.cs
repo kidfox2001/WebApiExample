@@ -5,6 +5,9 @@ using System.Web;
 
 namespace WebApiExample.Models
 {
+    /// <summary>
+    /// test
+    /// </summary>
     public class Student
     {
         public int ID { get; set; }
