@@ -13,6 +13,8 @@ namespace WebApiExample
     // Add-Migration ClientRefreshTokenCreate  สร้างไมเกรด
     // Update-Database 
 
+    // อยากสร้างดาต้าเบสให้เปิดอีกโปรเจคนึงสร้างนะ ไม่ต้องไปเกรชั่นก็ได้แค่แอด user
+
 
     public class AuthContext : IdentityDbContext<IdentityUser>
     {
@@ -22,6 +24,8 @@ namespace WebApiExample
 
         public DbSet<Client> Clients { get; set; }
         public DbSet<RefreshToken> RefreshTokens { get; set; }
+
+        //public DbSet<UserModel> UserModels { get; set; }
 
     }
 }
