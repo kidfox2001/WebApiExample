@@ -9,6 +9,8 @@ namespace WebApiExample
 {
     public static class WebApiConfig
     {
+
+        // todo ไว้ดู owin
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
