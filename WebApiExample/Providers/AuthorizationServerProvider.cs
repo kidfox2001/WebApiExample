@@ -25,7 +25,7 @@ namespace WebApiExample.Providers
             if (!context.TryGetBasicCredentials(out clientId, out clientSecret))
                 context.TryGetFormCredentials(out clientId, out clientSecret);
 
-            if (context.ClientId == null)  // ClientId เข้าใจว่าได้จากได้บนอ  TryGetBasicCredentials, TryGetFormCredentials
+            if (context.ClientId == null)  // ClientId เข้าใจว่าได้จากได้บน  TryGetBasicCredentials, TryGetFormCredentials
             {
                 context.Validated();
                 return  Task.FromResult<object>(null);

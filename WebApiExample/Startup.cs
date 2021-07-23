@@ -34,7 +34,7 @@ namespace WebApiExample
                 AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/oauth/token"),
                 //TokenEndpointPath = new PathString("/token"),
-                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(1),
+                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(9999),
                 Provider =   new AuthorizationServerProvider(),
                 RefreshTokenProvider = new RefreshTokenProvider()
             };

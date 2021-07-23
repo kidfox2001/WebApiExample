@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using WebApiExample.Models;
 using System.Web.Http;
+using ReactAuthentication.API;
 
 namespace WebApiExample.Controllers
 {
@@ -53,6 +54,30 @@ namespace WebApiExample.Controllers
 
             return null;
         }
+
+        [AllowAnonymous]
+        [Route("AddClient")]
+        [HttpPost]
+        public IHttpActionResult AddClient()
+        {
+            AuthContext db = new AuthContext();
+
+            db.Clients.Add(new Client()
+            {
+                Id = "reactApp",
+                Secret = Helper.GetHash("ben123456"),
+                Name = "ReactAuthentication",
+                Active = true,
+                RefreshTokenLifeTime = 60 * 24 * 10, // 10 days
+                AllowedOrigin = "*"
+            });
+
+            db.SaveChanges();
+
+
+            return Ok();
+        }
+
     }
 
 }
